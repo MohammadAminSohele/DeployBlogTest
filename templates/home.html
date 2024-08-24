@@ -5,7 +5,13 @@
     <title>home page</title>
 </head>
 <body>
-    firstname:{{firstName}}<hr>
-    lastName:{{lastName}}
+    
+    {% for article in Article %}
+        {{article.title}}
+        <br><br>
+        {{article.description}}
+        <br><br>
+    {% endfor %}
+        
 </body>
 </html>
