@@ -32,8 +32,3 @@ def home_Json(request):
     }
     return JsonResponse(data)
 
-def article_detail(request,slug):
-    context={
-        'article':Article.objects.get(slug=slug)
-    }
-    return render(request,'detail.html',context)
