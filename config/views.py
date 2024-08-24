@@ -19,7 +19,7 @@ def home(request):
         #         'description':'description 2'
         #     }
         # ]
-        'Article':Article.objects.filter(status='p').order_by('created')
+        # 'Article':Article.objects.filter(status='p').order_by('created')
     }
     return render(request,'home.html',context)
 
