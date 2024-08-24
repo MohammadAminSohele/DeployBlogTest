@@ -6,14 +6,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SohailiBlog | {{title}}</title>
+        <title>SohailiBlog | {% block title %}{% endblock title %}
+            </title>
         {% include 'shared/_HeaderRefrence.html' %}
     </head>
     <body>
         <!-- Navigation-->
         {% include 'shared/navbar.html' %}
         <!-- Page Header-->
-        {% include 'shared/Header.html' %}
+        
+        {% block Header %}{% endblock Header %}
+            
         <!-- Main Content-->
         
         {% block content %}

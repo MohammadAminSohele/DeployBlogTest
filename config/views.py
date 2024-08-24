@@ -8,7 +8,10 @@ def home_HttpResponse(request):
     return HttpResponse('hello world')
 
 def home(request):
+    Slider=Article.objects.order_by('-created').all()[:1]
+    print(Slider)
     context={
+        # region ValueList
         # 'articles':[
         #     {
         #         'title':'title1',
@@ -19,8 +22,11 @@ def home(request):
         #         'description':'description 2'
         #     }
         # ]
+        # endregion
+
         'title':'Home page',
-        'Article':Article.objects.filter(status='p').order_by('created')
+        'Slider':Slider,
+        'Article':Article.objects.filter(status='p').order_by('created'),
     }
     return render(request,'home.html',context)
 
