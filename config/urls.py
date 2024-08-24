@@ -28,6 +28,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('',views.home,name='home'),
+    path('<slug:slug>',views.article_detail,name='article_detail'),
+
     path('http',views.home_HttpResponse,name='home_HttpResponse'),
     path('json',views.home_Json,name='home_Json'),
 

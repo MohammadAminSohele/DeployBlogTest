@@ -19,7 +19,8 @@ def home(request):
         #         'description':'description 2'
         #     }
         # ]
-        # 'Article':Article.objects.filter(status='p').order_by('created')
+        'title':'Home page',
+        'Article':Article.objects.filter(status='p').order_by('created')
     }
     return render(request,'home.html',context)
 
@@ -30,3 +31,9 @@ def home_Json(request):
         'age':19
     }
     return JsonResponse(data)
+
+def article_detail(request,slug):
+    context={
+        'article':Article.objects.get(slug=slug)
+    }
+    return render(request,'detail.html',context)

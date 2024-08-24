@@ -1,0 +1,15 @@
+
+{% for article in Article %}
+<div class="post-preview">
+    <a href="">
+        <h2 class="post-title">{{article.title}}</h2>
+        <h3 class="post-subtitle">{{article.description}}</h3>
+    </a>
+    <p class="post-meta">
+        Posted by Mohammad
+        {% comment %} <a href="#!">Start Bootstrap</a> {% endcomment %}
+        {{article.published}}
+    </p>
+</div>
+<hr class="my-4" />
+{% endfor %}
