@@ -6,8 +6,8 @@ from django.utils import timezone
 
 class Article(models.Model):
     STATUS_CHOICES=(
-        ('d','Draft'),
-        ('p','Published'),
+        ('d','پیش نویس'),
+        ('p','منتشر شده'),
     )
 
     title=models.CharField(max_length=200,verbose_name='عنوان')
@@ -21,3 +21,7 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name='مقاله'
+        verbose_name_plural='مقالات'
