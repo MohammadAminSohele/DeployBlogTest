@@ -2,14 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 
-from Article.models import Article
+from Article.models import Article,Catagory
 
 def home_HttpResponse(request):
     return HttpResponse('hello world')
 
 def home(request):
     Slider=Article.objects.order_by('-created').all()[:1]
-    print(Slider)
     context={
         # region ValueList
         # 'articles':[
@@ -27,6 +26,7 @@ def home(request):
         'title':'Home page',
         'Slider':Slider,
         'Article':Article.objects.filter(status='p').order_by('created'),
+        'Catagory':Catagory.objects.filter(status=True)
     }
     return render(request,'home.html',context)
 

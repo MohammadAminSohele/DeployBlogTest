@@ -23,12 +23,12 @@ from django.conf.urls.static import static
 
 from .import views
 
-app_name ='config'
+app_name='Main'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('',views.home,name='home'),
+    path('',views.home,name='Home'),
     
     path('http',views.home_HttpResponse,name='home_HttpResponse'),
     path('json',views.home_Json,name='home_Json'),

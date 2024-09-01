@@ -18,6 +18,7 @@ class Catagory(models.Model):
     class Meta:
         verbose_name='دسته بندی'
         verbose_name_plural='دسته بندی ها'
+        ordering=['-position']
         
 
 class Article(models.Model):
