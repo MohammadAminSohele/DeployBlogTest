@@ -4,7 +4,7 @@ from django.utils import timezone
 
 def JalaliConverter(time):
     # return "hello"
-    jmonth=['فروردین','اردیبهشت','خرداد','تیر','مرداد','shahrivar','مهر','آبان','آذر','دی','بهمن','اسفند']
+    jmonth=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند']
     time=timezone.localtime(time)
     time_to_str="{},{},{}".format(time.year,time.month,time.day)
     time_to_tuple=jalali.Gregorian(time_to_str).persian_tuple()
@@ -13,10 +13,10 @@ def JalaliConverter(time):
         if time_to_list[1]==index+1:
             time_to_list[1]=month
             break
-    output="Date:{}/{}/{} clock:{}:{}".format(
-        time_to_list[0],
-        time_to_list[1],
+    output="{}/{}/{}, ساعت:{}:{}".format(
         time_to_list[2],
+        time_to_list[1],
+        time_to_list[0],
         time.hour,
         time.minute
     )
