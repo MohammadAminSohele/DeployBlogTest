@@ -15,9 +15,10 @@ class ArticleManager(admin.ModelAdmin):
     list_filter=('status',)
     search_fields=('title','description')
     prepopulated_fields={'slug':('title',)}
-
+    
     def catagory_to_str(self,obj):
         return ",".join([catagory.title for catagory in obj.cataogry.all()])
+    catagory_to_str.short_description='دسته بندی'
 
 admin.site.register(Article,ArticleManager)
 admin.site.register(Catagory,CatagoryManager)
