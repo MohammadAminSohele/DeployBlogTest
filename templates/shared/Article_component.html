@@ -8,6 +8,11 @@
     <p class="post-meta">
         نوشته شده توسط محمد امین
         {{article.Jpublish}}
+        
+        {% for cat in Catagory %}
+            #{{cat.title}}
+        {% endfor %}
+            
     </p>
 </div>
 <hr class="my-4" />
