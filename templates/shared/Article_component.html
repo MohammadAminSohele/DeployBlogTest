@@ -5,15 +5,13 @@
         <h2 class="post-title">{{article.title}}</h2>
         <h3 class="post-subtitle">{{article.description | truncatechars:30}}</h3>
     </a>
-    <p class="post-meta">
+    <p class="post-meta" style="text-align: left;">
         نوشته شده توسط محمد امین
         {{article.Jpublish}}
-        
-        {% for cat in Catagory %}
-            #{{cat.title}}
-        {% endfor %}
-            
     </p>
+    {% for cat in Catagory %}
+        {{cat.title}}#
+    {% endfor %}
 </div>
 <hr class="my-4" />
 {% endfor %}
