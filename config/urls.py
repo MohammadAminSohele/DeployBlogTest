@@ -22,13 +22,14 @@ from .import settings
 from django.conf.urls.static import static
 
 from .import views
+from Article.views import home
 
-app_name='Main'
+app_name='config'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('',views.home,name='Home'),
+    path('',home),
     
     path('http',views.home_HttpResponse,name='home_HttpResponse'),
     path('json',views.home_Json,name='home_Json'),

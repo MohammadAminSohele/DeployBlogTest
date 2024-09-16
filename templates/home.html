@@ -1,14 +1,12 @@
 {% extends 'shared/_MainLayout.html' %}
 
-
-{% block title %}{{title}}{% endblock title %}
-    
-
+{% block title %}
+    Home page
+{% endblock title %}
 
 {% block Header %}
 
 {% load static %}
-
 
 {% for slide in Slider %}
 <header class="masthead" style="background-image: url({{slide.images.url}})">
