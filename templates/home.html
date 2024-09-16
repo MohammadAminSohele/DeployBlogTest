@@ -5,9 +5,7 @@
 {% endblock title %}
 
 {% block Header %}
-
 {% load static %}
-
 {% for slide in Slider %}
 <header class="masthead" style="background-image: url({{slide.images.url}})">
     <div class="container position-relative px-4 px-lg-5">
@@ -23,8 +21,6 @@
 </header>
 {% endfor %}
 {% endblock Header %}
-    
-
 
 {% block content %}
 <div class="container px-4 px-lg-5">

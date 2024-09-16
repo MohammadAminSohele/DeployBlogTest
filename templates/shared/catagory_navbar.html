@@ -1,0 +1,8 @@
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto py-4 py-lg-0" style="margin-left: initial !important; margin-right: auto;">
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/">خانه</a></li>
+        {% for cat in Catagory %}
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/">{{cat.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>

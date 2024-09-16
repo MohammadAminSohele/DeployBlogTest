@@ -23,7 +23,7 @@ def home(request):
         'title':'Home page',
         'Slider':Slider,
         'Article':Article.objects.filter(status='p').order_by('created'),
-        'Catagory':Catagory.objects.filter(status=True)
+        # 'Catagory':Catagory.objects.filter(status=True)
     }
     return render(request,'home.html',context)
 
