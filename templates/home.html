@@ -5,32 +5,31 @@
 {% endblock title %}
 
 {% block Header %}
-{% load static %}
-{% for slide in Slider %}
-<header class="masthead" style="background-image: url({{slide.images.url}})">
-    <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="site-heading">
-                    <h1>{{slide.title}}</h1>
-                    <span class="subheading">{{slide.description | truncatechars:30}}</span>
+    {% for slide in Slider %}
+    <header class="masthead" style="background-image: url({{slide.images.url}})">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>{{slide.title}}</h1>
+                        <span class="subheading">{{slide.description | truncatechars:30}}</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-{% endfor %}
+    </header>
+    {% endfor %}
 {% endblock Header %}
 
 {% block content %}
-<div class="container px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-7">
-            <!-- Post preview-->
-            {% include 'shared/Article_component.html' %}
-            <!-- Pager-->
-            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">پست های قدیمی -></a></div>
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <!-- Post preview-->
+                {% include 'shared/Article_component.html' %}
+                <!-- Pager-->
+                <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">پست های قدیمی -></a></div>
+            </div>
         </div>
     </div>
-</div>
 {% endblock content %}
